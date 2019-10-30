@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
   <meta name="description" content="Prebuilt page for the 6-12 sandwich builder.">
   
-  <title>6-12 Prebuilt Page</title>
+  <title>6-12 Cheese Page</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -24,7 +24,7 @@
 <style>
 .container {
   position: relative;
-  width: 60%;
+  width: 65%;
   max-width: 400px;
 }
 
@@ -51,6 +51,7 @@
 
 .container .btn:hover {
   background-color: orange;
+
 }
 .column {
   float: left;
@@ -70,18 +71,20 @@
 <script type="text/javascript">
   function allownext()
   {
-    document.getElementById("btnnext").href="customize_prebuilt_page.html"; 
+    document.getElementById("btnnext").href="meat.html"; 
   }
-  function roast_beef() {
-    store.set( 'Bread: ', 'Classic Roll' );
-    //Fill in the rest
+  function add( ingredient ) {
+    var type = 'Cheeses: ';
+    if(store.get( type )!=null)
+    {
+      var list = store.get( type );
+      list.push(ingredient);
+      store.set( type, list );
+    }else{
+      var inglist = [ingredient];
+      store.set( type, inglist );
+    }
   }
-  function btncol(id)
-  {
-    var element = document.getElementById(id);
-    element.style.backgroundColor = "orange"
-  }
-
 </script>
 <body>
   <section class="header5 cid-rFLInF4iNo mbr-fullscreen" id="header5-9">
@@ -89,48 +92,48 @@
 
     <div class="row" id="optiongrid">
       <div class="row">
-        <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1"  style="padding-left: 400px;color: white;"> Choose a Prebuilt Sandwich</h1>
+        <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1"  style="padding-left: 400px;color: white;"> Choose a Type of Cheese</h1>
       </div>
       <div class="column">
         <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4"id = 1 onclick="allownext();roast_beef();btncol(1);" style="width:100%; height:40px;">Roast Beef</a>
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Cheddar' );" style="width:100%; height:40px;">Cheddar</a>
         </div>
         <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
         </div>
         <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
-        </div>
-      </div>
-      <div class="column">
-        <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
-        </div>
-        <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
-        </div>
-        <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
         </div>
       </div>
       <div class="column">
         <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
         </div>
         <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
         </div>
         <div class="container">
-          <img src="img_sandwich.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Roast Beef</a>
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
+        </div>
+        <div class="container">
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
+        </div>
+        <div class="container">
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext()" style="width:100%; height:40px;">Cheddar</a>
         </div>
 	  </div>
   </div>
