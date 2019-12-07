@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.11.3, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.11.3, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="Prebuilt page for the 6-12 sandwich builder.">
+  
+  <title>6-12 Cheese Page</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<style>
+.container {
+  position: relative;
+  width: 65%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 60%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 140%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #FFC35B;
+  color: white;
+  font-size: 20px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: orange;
+
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<script src="https://brandonsoboleski.github.io/websitebnt/store2.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  function allownext()
+  {
+    document.getElementById("btnnext").href="sauce.php"; 
+  }
+  function add( ingredient ) {
+    var type = 'Cheeses: ';
+    if(store.get( type )!=null)
+    {
+      var list = store.get( type );
+      list.push(ingredient);
+      store.set( type, list );
+    }else{
+      var inglist = [ingredient];
+      store.set( type, inglist );
+    }
+  }
+</script>
+<body>
+  <section class="header5 cid-rFLInF4iNo mbr-fullscreen" id="header5-9">
+    
+
+    <div class="row" id="optiongrid">
+      <div class="row">
+        <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1"  style="padding-left: 400px;color: white;"> Choose a Type of Cheese</h1>
+      </div>
+      <div class="column">
+        <div class="container">
+          <img src="img_cheddar.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Cheddar' );" style="width:100%; height:40px;">Cheddar One</a>
+        </div>
+        <div class="container">
+          <img src="c_american_cheese.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'American Cheese' );" style="width:100%; height:40px;">American Cheese</a>
+        </div>
+        <div class="container">
+          <img src="c_monteray_jack.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Monterey Jack' );" style="width:100%; height:40px;">Monterey Jack</a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <img src="c_mozzarella_cheese.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Mozzarella' );" style="width:100%; height:40px;">Mozzarella</a>
+        </div>
+        <div class="container">
+          <img src="c_parmesan.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Parmesan' );" style="width:100%; height:40px;">Parmesan</a>
+        </div>
+        <div class="container">
+          <img src="c_pepperjack_cheese.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Pepperjack Cheese' );" style="width:100%; height:40px;">Pepperjack Cheese</a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <img src="c_provolone_cheese.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Provolone Cheese' );" style="width:100%; height:40px;">Provolone Cheese</a>
+        </div>
+        <div class="container">
+          <img src="c_swiss_cheese.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Swiss Cheese' );" style="width:100%; height:40px;">Swiss Cheese</a>
+        </div>
+        <div class="container">
+          <img src="c_cheddar_cheese.jpg" alt="sandwich" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" onclick="allownext();add( 'Cheddar Two' );" style="width:100%; height:40px;">Cheddar Two</a>
+        </div>
+	  </div>
+  </div>
+  
+	<div class="container" id="conttainnext">
+			<a class="btn btn-md btn-white-outline display-4"   style="width:300px;height:40px;background-color: #de1822;" id="btnnext">Next</a>
+	</div>
+
+</section>
+
+
+  <section class="engine"><a href="https://mobirise.info/v">free html templates</a></section><script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+</body>
+</html>
