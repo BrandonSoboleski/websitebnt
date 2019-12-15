@@ -58,14 +58,36 @@
   }
   function addcustomer( ingredient ) {
     var type = 'Location: ';
-    store.set( type, ingredient );
-     var t=<?php 
-    $con = mysqli_connect('178.128.65.56','remote','remotePass','remoteDB');
+    store.set( type, ingredient);
+
+    var t=<?php 
+      $con = mysqli_connect('178.128.65.56','remote','remotePass','remoteDB');
       if (!$con) {
           die('Could not connect: ' . mysqli_error($con));
       }
       
-      $sql="SELECT * FROM CHEESE4";
+      $sql="SELECT * FROM prebuilt3";
+      $result = mysqli_query($con,$sql);
+
+      $rows = array();
+      while($r = mysqli_fetch_assoc($result)) {
+          $rows[] = $r;       
+      }
+      echo json_encode($rows);
+      mysqli_close($con); 
+     ?>;
+    localStorage["prebuilt"] = JSON.stringify(t);
+
+
+
+
+     var t=<?php 
+      $con = mysqli_connect('178.128.65.56','remote','remotePass','remoteDB');
+      if (!$con) {
+          die('Could not connect: ' . mysqli_error($con));
+      }
+      
+      $sql="SELECT * FROM CHEESE5";
       $result = mysqli_query($con,$sql);
 
      $rows = array();

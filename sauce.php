@@ -73,20 +73,99 @@
   {
     document.getElementById("btnnext").href="topping.php"; 
   }
-  function add( ingredient ) {
-    var type = 'Sauces: ';
-    if(store.get( type )!=null)
+  function add( i ) {
+    Sauce = JSON.parse(localStorage.getItem('sauce'));
+    if(store.get("Sauces: ")!= null)
     {
-      var list = store.get( type );
-      list.push(ingredient);
-      store.set( type, list );
-    }else{
-      var inglist = [ingredient];
-      store.set( type, inglist );
+      if(store.get("Sauces: ").indexOf(Sauce[i-1].food_name) > -1)
+      {
+        //console.log("here");
+        var element = document.getElementById(i);
+        element.style.backgroundColor = "#FFC35B";
+        var chee = store.get("Sauces: ");
+        var index = chee.indexOf(Sauce[i-1].food_name);
+        if (index !== -1) chee.splice(index, 1);
+        store.set('Sauces: ', chee);
+        var index = chee.indexOf(Sauce[i-1].food_name);
+        if (index !== -1) chee.splice(index, 1);
+        store.set('Sauces: ', chee);
+        var index = chee.indexOf(Sauce[i-1].food_name);
+        if (index !== -1) chee.splice(index, 1);
+        store.set('Sauces: ', chee);
+      }else
+      {
+        btncol(i);
+        var ingredient = Sauce[i-1].food_name;
+        var type = 'Sauces: ';
+        if(store.get( type )!=null)
+        {
+          var list = store.get( type );
+          list.push(ingredient);
+          store.set( type, list );
+        }else{
+          var inglist = [ingredient];
+          store.set( type, inglist );
+        }
+      }
+    }else
+    {
+      btncol(i);
+      var ingredient = Sauce[i-1].food_name;
+      var type = 'Sauces: ';
+      if(store.get( type )!=null)
+      {
+        var list = store.get( type );
+        list.push(ingredient);
+        store.set( type, list );
+      }else{
+        var inglist = [ingredient];
+        store.set( type, inglist );
+      }
+    }
+    
+  }
+  function btncol(id)
+  {
+    var element = document.getElementById(id);
+    element.style.backgroundColor = "#d4612c";
+    Sauce = JSON.parse(localStorage.getItem('sauce'));
+    for(var i = 1; i<16;i++)
+    {
+      if(id!=i)
+      {
+        var element = document.getElementById(i);
+        element.style.backgroundColor = "#FFC35B";
+      }
+      if(store.get("Sauces: ") != null){
+        if(store.get("Sauces: ").indexOf(Sauce[i-1].food_name) > -1)
+        {
+          var element = document.getElementById(i);
+          element.style.backgroundColor = "#d4612c";
+        }
+      }
     }
   }
+  function btnfill()
+  {
+    sauce = JSON.parse(localStorage.getItem('sauce'));
+    
+    for (i = 0; i < 15; i++) { 
+      document.getElementById(i+1).innerHTML = sauce[i].food_name;
+    }
+  }
+  function imgfill()
+  {
+    sauce = JSON.parse(localStorage.getItem('sauce'));
+    for (i = 15; i < 30; i++) { 
+      document.getElementById(i+1).src = sauce[i-15].image;
+    }
+  }
+  function load() {
+    btnfill();
+    imgfill();
+  }
 </script>
-<body>
+<body onload="load();">
   <section class="header5 cid-rFLInF4iNo mbr-fullscreen" id="header5-9">
     
 
@@ -96,68 +175,68 @@
       </div>
       <div class="column">
         <div class="container">
-          <img src="img_mustard.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Mustard' )" style="width:100%; height:40px;">Mustard</a>
+          <img alt="sandwich" id = 16 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 1 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_barbeque.jpeg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Barbeque' )" style="width:100%; height:40px;">Barbeque</a>
+          <img alt="sandwich" id = 17 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 2 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_buffalo.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Buffalo' )" style="width:100%; height:40px;">Buffalo</a>
+          <img alt="sandwich" id = 18 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 3 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_chipotle.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Chipotle' )" style="width:100%; height:40px;">Chipotle</a>
+          <img alt="sandwich" id = 19 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 4 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_garlic_aioli.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Garlic Aioli' )" style="width:100%; height:40px;">Garlic Aioli</a>
-        </div>
-      </div>
-      <div class="column">
-        <div class="container">
-          <img src="sa_honeymustard.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Honey Mustard' )" style="width:100%; height:40px;">Honey Mustard</a>
-        </div>
-        <div class="container">
-          <img src="sa_horseradish.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Horseradish' )" style="width:100%; height:40px;">Horseradish</a>
-        </div>
-        <div class="container">
-          <img src="sa_ketchup.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Ketchup' )" style="width:100%; height:40px;">Ketchup</a>
-        </div>
-        <div class="container">
-          <img src="sa_marinara.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Marinara' )" style="width:100%; height:40px;">Marinara</a>
-        </div>
-        <div class="container">
-          <img src="sa_mayonnaise.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Mayonnaise' )" style="width:100%; height:40px;">Mayonnaise</a>
+          <img alt="sandwich" id = 20 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 5 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
       </div>
       <div class="column">
         <div class="container">
-          <img src="sa_oil.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Oil' )" style="width:100%; height:40px;">Oil</a>
+          <img alt="sandwich" id = 21 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 6 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_ranch.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Ranch' )" style="width:100%; height:40px;">Ranch</a>
+          <img alt="sandwich" id = 22 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 7 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_spicymustard.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Spicy Mustard' )" style="width:100%; height:40px;">Spicy Mustard</a>
+          <img alt="sandwich" id = 23 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 8 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_sriracha.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Sriracha' )" style="width:100%; height:40px;">Sriracha</a>
+          <img alt="sandwich" id = 24 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 9 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
-          <img src="sa_vinegar.jpg" alt="sandwich" height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" onclick="allownext(); add( 'Vinegar' )" style="width:100%; height:40px;">Vinegar</a>
+          <img alt="sandwich" id = 25 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 10 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+          <img alt="sandwich" id = 26 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 11 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
+        </div>
+        <div class="container">
+          <img alt="sandwich" id = 27 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 12 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
+        </div>
+        <div class="container">
+          <img alt="sandwich" id = 28 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 13 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
+        </div>
+        <div class="container">
+          <img alt="sandwich" id = 29 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 14 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
+        </div>
+        <div class="container">
+          <img alt="sandwich" id = 30 height="452" width="612" style="width:100%; padding-bottom: 60px;padding-left: 10px;">
+          <a class="btn btn-md btn-white-outline display-4" id = 15 onclick="allownext(); add( id )" style="width:100%; height:40px;"></a>
         </div>
 	  </div>
   </div>
