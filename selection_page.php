@@ -66,12 +66,21 @@
           die('Could not connect: ' . mysqli_error($con));
       }
       
-      $sql="SELECT * FROM prebuilt3";
+      $sql="SELECT * FROM prebuilt0";
       $result = mysqli_query($con,$sql);
 
       $rows = array();
-      while($r = mysqli_fetch_assoc($result)) {
-          $rows[] = $r;       
+      while($r = mysqli_fetch_assoc($result)) {  
+          $arr=array("toppings","sauce","meat", "cheese");  
+          foreach ($arr as &$value) { 
+            $r[$value] = explode(",", $r[$value]);
+            if($r[$value][0]=="None"){
+              $r[$value] = array();
+            }
+          }
+          
+          // strcmp("Hello world!","Hello world!");
+          $rows[] = $r;
       }
       echo json_encode($rows);
       mysqli_close($con); 
