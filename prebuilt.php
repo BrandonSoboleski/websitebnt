@@ -73,51 +73,13 @@
   {
     document.getElementById("btnnext").href="customize_prebuilt_page.php"; 
   }
-  function roast_beef() {
-    store.set( 'Bread: ', 'Classic Roll' );
-    store.set( 'Meats: ', ['Roast Beef'] );
-    store.set( 'Cheeses: ', ['Swiss Cheese'] );
-    store.set( 'Toppings: ', ['Onions']);
-    store.set( 'Sauces: ', ['Horseradish']);
-  }
-  function ham_and_cheese() {
-    store.set( 'Bread: ', 'Classic Roll' );
-    store.set( 'Meats: ', ['Roast Beef'] );
-    store.set( 'Cheeses: ', ['Swiss Cheese']);
-    store.set( 'Toppings: ', ['Onions']);
-  }
-  function buffalo_chicken(){
-    store.set( 'Bread: ', 'Classic Roll');
-    store.set( 'Meat: ', ['Buffalo Chicken']);
-    store.set( 'Cheese: ', ['Provolone']);
-    store.set( 'Toppings: ', ['Lettuce', 'Tomato']);
-  }
-  function meat_ball(){
-    store.set('Bread: ', 'Wheat Roll');
-    store.set('Meat: ', ['Meatballs']);
-    store.set('Cheese: ', ['Parmesan']);
-    store.set('Sauce: ', ['Marinara']);
-  }
-  function ham_and_swiss(){
-    store.set('Bread: ', 'White Bread');
-    store.set('Meat: ', ['Ham']);
-    store.set('Cheese: ', ['Swiss']);
-    store.set('Sauce: ', ['Mustard']);
-    store.set('Toppings: ', ['Lettuce', 'Tomato', 'Pickles']);
-  }
-
-  function btncol(id)
-  {
-    var element = document.getElementById(id);
-    element.style.backgroundColor = "#d4612c";
-    for(var i = 1; i<10;i++)
-    {
-      if(id!=i)
-      {
-        var element = document.getElementById(i);
-        element.style.backgroundColor = "#FFC35B";
-      }
-    }
+  function add( i ) {
+    sandwich = store.get('prebuilt')[i-1];
+    store.set( 'Bread: ', sandwich.bread );
+    store.set( 'Meats: ', sandwich.meat );
+    store.set( 'Cheeses: ', sandwich.cheese );
+    store.set( 'Toppings: ', sandwich.toppings);
+    store.set( 'Sauces: ', sandwich.sauce);
   }
   function btnfill()
   {
@@ -152,43 +114,43 @@
       <div class="column">
         <div class="container">
           <img alt="sandwich" id = 10 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 1 onclick="allownext();roast_beef();btncol(1);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 1 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
           <img alt="sandwich" id = 11 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 2 onclick="allownext();btncol(2);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 2 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
           <img alt="sandwich" id = 12 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 3 onclick="allownext();ham_and_swiss();btncol(3);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 3 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
       </div>
       <div class="column">
         <div class="container">
           <img alt="sandwich" id = 13 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 4 onclick="allownext();btncol(4);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 4 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
           <img alt="sandwich" id = 14 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 5 onclick="allownext();btncol(5);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 5 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
           <img alt="sandwich" id = 15 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 6 onclick="allownext();meat_ball();btncol(6);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 6 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
       </div>
       <div class="column">
         <div class="container">
           <img alt="sandwich" id = 16 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 7 onclick="allownext();btncol(7);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 7 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
           <img alt="sandwich" id = 17 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 8 onclick="allownext();btncol(8);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 8 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
         <div class="container">
           <img alt="sandwich" id = 18 style="width:100%; padding-bottom: 60px;padding-left: 10px;">
-          <a class="btn btn-md btn-white-outline display-4" id = 9 onclick="allownext();btncol(9);" style="width:100%; height:40px;"></a>
+          <a class="btn btn-md btn-white-outline display-4" id = 9 onclick="allownext();add( id );" style="width:100%; height:40px;"></a>
         </div>
 	  </div>
   </div>

@@ -139,6 +139,7 @@
       if(store.get("Cheeses: ") != null){
         if(store.get("Cheeses: ").indexOf(cheese[i-1].food_name) > -1)
         {
+          allownext();
           var element = document.getElementById(i);
           element.style.backgroundColor = "#d4612c";
         }
@@ -161,6 +162,8 @@
     }
   }
   function load() {
+    add( 1 );
+    add( 1 );
     btnfill();
     imgfill();
   }

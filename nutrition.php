@@ -164,7 +164,7 @@
     {
       allergens = allergens.concat(", Wheat");
     }
-    if(store.get("Sauces: ").indexOf("Mayo") > -1 ||store.get("Sauces: ").indexOf("Chipotle") > -1 ||store.get("Sauces: ").indexOf("Garlic Aioli") > -1)
+    if(store.get("Sauces: ").indexOf("Mayonnaise") > -1 ||store.get("Sauces: ").indexOf("Chipotle") > -1 ||store.get("Sauces: ").indexOf("Garlic Aioli") > -1)
     {
       allergens = allergens.concat(", Egg(s)");
     }
@@ -188,7 +188,7 @@
     element.innerHTML = "Ingredients:".concat("\nBread: ",store.get("Bread: "),"\nCheese(s): ",removeDups(store.get("Cheeses: ")).toString(),"\nMeat(s): ",removeDups(store.get("Meats: ")).toString(),"\nSauce(s): ",removeDups(store.get("Sauces: ")).toString(),"\nTopping(s): ",removeDups(store.get("Toppings: ")).toString(),"\n\n", allergens);
     var element = document.getElementById("nutfac");
 
-    element.innerHTML = "Nutrition Facts\nServing Size One Sandwich\nServings One\n_______________________________________".concat("Amount Per Serving\nCalories ", nutrition.Energy,  " Calories From Fat ", nutrition["Total lipid (fat)"]*9, "\n                    % Daily Value\n", "Total Fat                       % ", nutrition["Total lipid (fat)"]/65*100, "\n  Saturated Fat                 % ", nutrition["Fatty acids, total saturated"]/20*100, "\n  Trans Fat                     % ", nutrition["Fatty acids, total trans"], "\nCholesterol                     % ", nutrition["Cholesterol"]/.3*100, "\nSodium                          % ", nutrition["Sodium, Na"]/2.4*100, "\nTotal Cabohydrate               % ", nutrition["Carbohydrate, by difference"]/300*100, "\n  Dietary Fiber                 % ", nutrition["Fiber, total dietary"]/25*100, "\n  Sugars                        % ", nutrition["Sugars, total"]/30*100, "\nProtein                         % ", nutrition["Protein"]/50*100, "\n_______________________________________\n", "Vitamin A " , nutrition["Vitamin A, IU"], "    Vitamin C ", nutrition["Vitamin C, total ascorbic acid"], "\nCalcium ", nutrition["Calcium, Ca"], "    Iron ", nutrition["Iron, Fe"]);
+    element.innerHTML = "Nutrition Facts\nServing Size One Sandwich\nServings One\n_______________________________________".concat("Amount Per Serving\nCalories ", nutrition.Energy,  " Calories From Fat ", Math.round(nutrition["Total lipid (fat)"]*9), "\n                  % Daily Value\n", "Total Fat                     % ", Math.round(nutrition["Total lipid (fat)"]/65*100), "\n  Saturated Fat               % ", Math.round(nutrition["Fatty acids, total saturated"]/20*100), "\n  Trans Fat                   % ", Math.round(nutrition["Fatty acids, total trans"]), "\nCholesterol                   % ", Math.round(nutrition["Cholesterol"]/300*100), "\nSodium                        % ", Math.round(nutrition["Sodium, Na"]/2400*100), "\nTotal Cabohydrate             % ", Math.round(nutrition["Carbohydrate, by difference"]/300*100), "\n  Dietary Fiber               % ", Math.round(nutrition["Fiber, total dietary"]/25*100), "\n  Sugars                      % ", Math.round(nutrition["Sugars, total"]/30*100), "\nProtein                       % ", Math.round(nutrition["Protein"]/50*100), "\n_______________________________________\n", "Vitamin A " , nutrition["Vitamin A, IU"], "    Vitamin C ", nutrition["Vitamin C, total ascorbic acid"], "\nCalcium ", nutrition["Calcium, Ca"], "    Iron ", nutrition["Iron, Fe"]);
   }
   function clear()
   {
@@ -219,7 +219,7 @@ Servings
 _______________________________________
 Amount Per Serving
 Calories  Calories From Fat
-                    % Daily Value
+                % Daily Value
 Total Fat                       %
   Saturated Fat                 %
   Trans Fat                     %
