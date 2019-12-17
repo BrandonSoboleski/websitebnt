@@ -238,7 +238,6 @@ Calcium     Iron
       </div>
       <div class="column">
         <div class="container">
-        <a class="btn btn-md btn-white-outline display-4"  style="width:100%; height:40px;">Print/Export Nutritional Data</a>
         <a class="btn btn-md btn-secondary display-4" onclick="store.clear();" href = "hello.php" style="width:100%; height:40px;">Start over</a>
         </div>
 	  </div>

@@ -80,6 +80,20 @@
     store.set( 'Cheeses: ', sandwich.cheese );
     store.set( 'Toppings: ', sandwich.toppings);
     store.set( 'Sauces: ', sandwich.sauce);
+    btncol(i);
+  }
+  function btncol(id)
+  {
+    var element = document.getElementById(id);
+    element.style.backgroundColor = "#d4612c";
+    for(var i = 1; i<7;i++)
+    {
+      if(id!=i)
+      {
+        var element = document.getElementById(i);
+        element.style.backgroundColor = "#FFC35B";
+      }
+    }
   }
   function btnfill()
   {

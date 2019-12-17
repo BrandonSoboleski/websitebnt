@@ -135,6 +135,7 @@
       {
         var element = document.getElementById(i);
         element.style.backgroundColor = "#FFC35B";
+        allownext();
       }
       if(store.get("Meats: ") != null){
         if(store.get("Meats: ").indexOf(Meat[i-1].food_name) > -1)
@@ -162,7 +163,7 @@
     }
   }
   function load() {
-    
+    allownext();
     add( 1 );
     add( 1 );
     btnfill();

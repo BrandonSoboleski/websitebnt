@@ -162,6 +162,7 @@
     }
   }
   function load() {
+    allownext();
     add( 1 );
     add( 1 );
     btnfill();
